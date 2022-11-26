@@ -16,9 +16,9 @@ def display_details(addon, show_title, message):
     addon_name = addon.getAddonInfo('name')
     xbmcgui.Dialog().ok('{0} - {1}'.format(addon_name, show_title), message)
     
-def get_end_time(currenttime_finish):
-    currenttime_finish = datetime.now() + timedelta(seconds=finish_runtime)
-    return (currenttime_finish)
+def get_end_time(current_time_finish):
+    current_time_finish = datetime.now() + timedelta(seconds=finish_runtime)
+    return (current_time_finish)
  
 if __name__ == '__main__':
     addon = xbmcaddon.Addon()
@@ -60,6 +60,7 @@ if __name__ == '__main__':
             percent = '{0}%'.format(str(round((float(watched_episodes)/total_episodes) * 100))[:-2])
             message = 'Watched/Unwatched: {0}/{1} ({2})'.format(watched_episodes, total_episodes, percent)
             message = '{0}\nRemaining runtime: {1}'.format(message, remaining_runtime)
+            message = '{0}\nFinish runtime: {1}'.format(message, finish_runtime)
             message = '{0}\nTotal runtime: {1}'.format(message, total_runtime)
             display_details(addon, show_title, message)
         else:
