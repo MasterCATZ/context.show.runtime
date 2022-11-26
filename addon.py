@@ -22,7 +22,7 @@ def get_end_time(current_time_finish):
 
 if __name__ == '__main__':
     addon = xbmcaddon.Addon()
-    remaining_runtime, total_runtime = 0, 0
+    remaining_runtime, finish_runtime, total_runtime = 0,0, 0
     query = {"jsonrpc": "2.0", "method": "VideoLibrary.GetTVShows", "params": { "filter": { "field": "title", "operator": "is", "value": "" }, "limits": { "start": 0, "end": 1}, "properties": [ "title", "originaltitle", "playcount", "episode", "episodeguide", "watchedepisodes", "season"], "sort": { "order": "ascending", "method": "label"} }, "id": "libTvShows"}
     query = json.loads(json.dumps(query))
     query['params']['filter']['value'] = sys.listitem.getLabel()
