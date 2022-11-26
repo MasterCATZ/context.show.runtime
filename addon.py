@@ -44,7 +44,7 @@ if __name__ == '__main__':
             if episode['playcount'] == 0:
                 remaining_runtime += episode['runtime'] / 60
                 finish_runtime += episode['runtime']
-                total_runtime += episode['runtime'] / 60
+            total_runtime += episode['runtime'] / 60
         
         xbmc.log('Context Showruntime remaining runtime: ' + str(show_title) + ' ' + str(remaining_runtime), xbmc.LOGDEBUG)
         xbmc.log('Context Showruntime total runtime: ' + str(show_title) + ' ' + str(total_runtime), xbmc.LOGDEBUG)
